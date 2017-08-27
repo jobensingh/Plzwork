@@ -40,6 +40,7 @@ func main() {
 
 	for t := time.Tick(time.Duration(*interval) * time.Second); ; <-t {
 		if _, err := s.ChannelMessageSend(id, randomdata.Country(randomdata.FullCountry)); err != nil {
+			s.ChannelMessageDelete(id, 0)
 			log.Print(err)
 		} else {
 			log.Print("sent message")
