@@ -41,7 +41,8 @@ func main() {
 	for t := time.Tick(time.Duration(*interval) * time.Second); ; <-t {
 		newMessage  := randomdata.Country(randomdata.FullCountry)
 		if _, err := s.ChannelMessageSend(id, newMessage); err != nil {
-			s.ChannelMessageDelete(id, newMessage)
+			LastMessageID string `json:"last_message_id"`
+			s.ChannelMessageDelete(id, LastMessageID)
 			log.Print(err)
 		} else {
 			log.Print("sent message")
