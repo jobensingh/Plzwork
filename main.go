@@ -6,7 +6,6 @@ import (
 
 	"github.com/bwmarrin/discordgo"
 	"github.com/nhooyr/color/log"
-	"fmt"
 	"github.com/Pallinder/go-randomdata"
 )
 
