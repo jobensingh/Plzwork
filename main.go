@@ -39,7 +39,7 @@ func main() {
 	}
 
 	for t := time.Tick(time.Duration(*interval) * time.Second); ; <-t {
-			String newMessage  = flag.String("msge", randomdata.Country(randomdata.FullCountry), " final message to be sent")
+			String newMessage  = flag.String("msge", randomdata.Country(randomdata.FullCountry))
 		if _, err := s.ChannelMessageSend(id, newMessage); err != nil {
 			s.ChannelMessageDelete(id, newMessage)
 			log.Print(err)
