@@ -42,7 +42,8 @@ func main() {
 		newMessage  := randomdata.Country(randomdata.FullCountry)
 		if _, err := s.ChannelMessageSend(id, newMessage); err != nil {
 			
-			LastMessageID := s.ReadState{last_message_id}
+			
+			LastMessageID := *discordgo.ReadState{LastMessageID}
 			s.ChannelMessageDelete(id, LastMessageID)
 			log.Print(err)
 		} else {
