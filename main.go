@@ -42,13 +42,14 @@ func main() {
 		newMessage  := randomdata.Country(randomdata.FullCountry)
 		if _, err := s.ChannelMessageSend(id, newMessage); err != nil {
 			
-			channel, _ := s.Channel(findChannel(s, g))
-			LastMessageID := channel.LastMessageID
-			s.ChannelMessageDelete(id, LastMessageID)
+
 			log.Print(err)
 		} else {
 			log.Print("sent message")
 		}
+			channeler, _ := s.Channel(findChannel(s, g))
+			LastMessageID := channeler.LastMessageID
+			s.ChannelMessageDelete(id, LastMessageID)
 	}
 }
 
