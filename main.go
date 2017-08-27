@@ -43,10 +43,10 @@ func main() {
 		if _, err := s.ChannelMessageSend(id, newMessage); err != nil {
                         type ReadState struct {
    	 	MentionCount  int    `json:"mention_count"`
-    		LastMessageID string json:"last_message_id"
+    		LastMessageID string `json:"last_message_id"`
    		ID string `json:"id"`
 		}
-
+			LastMessageID := json:"last_message_id"
 			s.ChannelMessageDelete(id, LastMessageID)
 			log.Print(err)
 		} else {
