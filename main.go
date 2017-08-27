@@ -6,6 +6,8 @@ import (
 
 	"github.com/bwmarrin/discordgo"
 	"github.com/nhooyr/color/log"
+	"fmt"
+	"github.com/Pallinder/go-randomdata"
 )
 
 var (
@@ -13,7 +15,7 @@ var (
 	pass     = flag.String("pass", "", "account password")
 	guild    = flag.String("guild", "", "guild (server) to join")
 	channel  = flag.String("chan", "", "channel to join")
-	message  = flag.String("msg", "_", "message to be sent")
+	message  = flag.String("msg", randomdata.Country(randomdata.FullCountry), "message to be sent")
 	interval = flag.Int64("int", 60, "interval between messages in seconds")
 )
 
