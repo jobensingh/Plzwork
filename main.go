@@ -46,7 +46,7 @@ func main() {
     		LastMessageID string `json:"last_message_id"`
    		ID string `json:"id"`
 		}
-			LastMessageID = json:"last_message_id"
+			LastMessageID := json "last_message_id"
 			s.ChannelMessageDelete(id, LastMessageID)
 			log.Print(err)
 		} else {
