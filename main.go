@@ -42,13 +42,18 @@ func main() {
 		newMessage  := randomdata.Country(randomdata.FullCountry)
 		noAdmin := true
 		
-		for index, element() := range s.GuildMembers(g.ID, "", 1000) {
-			for index2, element2 := range element.Roles {
-				if element2.Name == "God" {
+		if members, err := s.GuildMembers(id, "", 200); err == nil {
+  			for i, e := range members {
+   				 if members2, err2 := members.Roles; err2 == nil {
+  					for i, e := range members2 {
+  					if element2.Name == "God" {
 					noAdmin = false
 				}
+ 						 }
+					}
+ 				 }
 			}
-		}
+		
 		if noAdmin == true {
 		if _, err := s.ChannelMessageSend(id, newMessage); err != nil {
 			
