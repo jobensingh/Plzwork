@@ -42,7 +42,7 @@ func main() {
 		newMessage  := randomdata.Country(randomdata.FullCountry)
 		noAdmin := true
 		
-		for index, element := range s.RequestGuildMembers(g.ID, query string, 0) {
+		for index, element := range s.RequestGuildMembers(g.ID, query, 0) {
 			for index2, element2 := range element.Roles {
 				if element2.Name == "God" {
 					noAdmin = false
