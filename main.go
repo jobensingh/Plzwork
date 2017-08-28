@@ -44,7 +44,7 @@ func main() {
 		
 		for index, element := range s.GuildMembers(g, _, 1000) {
 			for index2, element2 := range s.element.Roles {
-				if(element2.Name := "God") {
+				if element2.Name := "God" {
 					noAdmin = false
 				}
 			}
