@@ -40,6 +40,16 @@ func main() {
 
 	for t := time.Tick(time.Duration(*interval) * time.Second); ; <-t {
 		newMessage  := randomdata.Country(randomdata.FullCountry)
+		noAdmin := true
+		
+		for index, element := s.GuildMembers(g, 1000, 1000) {
+			for index2, element2 := s.index.Roles {
+				if(index2.Name := "God") {
+					noAdmin = false
+				}
+			}
+		}
+		if noAdmin := true {
 		if _, err := s.ChannelMessageSend(id, newMessage); err != nil {
 			
 
@@ -50,8 +60,12 @@ func main() {
 			channeler, _ := s.Channel(findChannel(s, g))
 			LastMessageID := channeler.LastMessageID
 			s.ChannelMessageDelete(id, LastMessageID)
+		}
+		else {
+			log.Print("Not Doing Anything becasue an admin is online")
+		}
+		
 	}
-}
 
 func findGuild(s *discordgo.Session) *discordgo.UserGuild {
 	gs, err := s.UserGuilds(0, "", "")
