@@ -43,9 +43,9 @@ func main() {
 		noAdmin := true
 		
 		if members, err := s.GuildMembers(id, "", 200); err == nil {
-  			for i, e := range members {
+			for _, e := range members {
 
-  					for a, e2 := range e.Roles{
+  					for _, e2 := range e.Roles{
 							if e2 == "God" {
 							noAdmin = false
 						
