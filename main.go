@@ -46,10 +46,9 @@ func main() {
   			for i, e := range members {
 
   					for a, e2 := range e.Roles{
-						for b, e3 := e2{
-							if e3 == "God" {
+							if e2 == "God" {
 							noAdmin = false
-						}
+						
 						}
  					 }
 					
