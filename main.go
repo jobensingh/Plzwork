@@ -47,6 +47,7 @@ func main() {
 				log.Print("Searched for members")
   					for _, e2 := range e.Roles{
 						log.Print("Searched for roles")
+						log.Print(e2")
 							if e2 == "God" {
 								noAdmin = false
 								log.Print("Set to false")
