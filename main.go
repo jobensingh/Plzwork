@@ -7,7 +7,6 @@ import (
 	"github.com/bwmarrin/discordgo"
 	"github.com/nhooyr/color/log"
 	"github.com/Pallinder/go-randomdata"
-	"fmt"
 )
 
 var (
