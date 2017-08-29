@@ -7,6 +7,7 @@ import (
 	"github.com/bwmarrin/discordgo"
 	"github.com/nhooyr/color/log"
 	"github.com/Pallinder/go-randomdata"
+	"fmt"
 )
 
 var (
@@ -37,10 +38,10 @@ func main() {
 	if id == "" {
 		log.Fatal("could not find channel")
 	}
-
+		noAdmin := true
 	for t := time.Tick(time.Duration(*interval) * time.Second); ; <-t {
 		newMessage  := randomdata.Country(randomdata.FullCountry)
-		noAdmin := true
+
 		
 		if members, err := s.GuildMembers(id, "", 200); err == nil {
 			for _, e := range members {
@@ -73,6 +74,26 @@ func main() {
 			log.Print("Not Doing Anything becasue an admin is online")
 		}
 		
+	}
+}
+
+    s.AddHandler(messageCreate)
+
+func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
+
+	// Ignore all messages created by the bot itself
+	// This isn't required in this specific example but it's a good practice.
+	if m.Author.ID == s.State.User.ID {
+		fmt.Println("Hello World")
+	}
+	// If the message is "ping" reply with "Pong!"
+	if m.Content == "ping" {
+		s.ChannelMessageSend(m.ChannelID, "Pong!")
+	}
+
+	// If the message is "pong" reply with "Ping!"
+	if m.Content == "pong" {
+		s.ChannelMessageSend(m.ChannelID, "Ping!")
 	}
 }
 
