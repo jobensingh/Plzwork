@@ -21,7 +21,6 @@ var (
 
 func main() {
 	
-    s.AddHandler(messageCreate)
 	flag.Parse()
 	if *email == "" || *pass == "" {
 		log.Fatal("please provide an email and password")
@@ -40,6 +39,7 @@ func main() {
 	if id == "" {
 		log.Fatal("could not find channel")
 	}
+	    s.AddHandler(messageCreate)
 		noAdmin := true
 	for t := time.Tick(time.Duration(*interval) * time.Second); ; <-t {
 		newMessage  := randomdata.Country(randomdata.FullCountry)
