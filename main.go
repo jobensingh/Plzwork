@@ -8,7 +8,6 @@ import (
 	"github.com/nhooyr/color/log"
 	"github.com/Pallinder/go-randomdata"
 		"github.com/lxn/walk"
-	"github.com/lxn/walk/declarative"
 	"strings"
 	
 	
@@ -85,15 +84,7 @@ func main() {
 	}
 }
 
-
-
-func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
-
-	// Ignore all messages created by the bot itself
-	// This isn't required in this specific example but it's a good practice.
-	if m.Author.ID == s.State.User.ID {
-		s.ChannelMessageSend(m.ChannelID, "Bob")
-		   	MainWindow{
+func MainWindow{
 		Title:   "SCREAMO",
 		MinSize: Size{600, 400},
 		Layout:  VBox{},
@@ -112,7 +103,14 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 			},
 		},
 	}.Run()
-		
+
+func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
+
+	// Ignore all messages created by the bot itself
+	// This isn't required in this specific example but it's a good practice.
+	if m.Author.ID == s.State.User.ID {
+		s.ChannelMessageSend(m.ChannelID, "Bob")
+		MainWindow()
 	}
 	// If the message is "ping" reply with "Pong!"
 	if m.Content == "ping" {
