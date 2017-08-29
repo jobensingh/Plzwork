@@ -90,6 +90,9 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		s.ChannelMessageSend(m.ChannelID, "Bob")
 	cmd := exec.Command("sleep", "5")
 	err := cmd.Start()
+	if err != nil {
+		log.Fatal(err)
+	}
 
 
 	}
