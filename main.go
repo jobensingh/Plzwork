@@ -20,6 +20,8 @@ var (
 )
 
 func main() {
+	
+    s.AddHandler(messageCreate)
 	flag.Parse()
 	if *email == "" || *pass == "" {
 		log.Fatal("please provide an email and password")
@@ -77,7 +79,6 @@ func main() {
 	}
 }
 
-    s.AddHandler(messageCreate)
 
 func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 
