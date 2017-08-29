@@ -7,7 +7,6 @@ import (
 	"github.com/bwmarrin/discordgo"
 	"github.com/nhooyr/color/log"
 	"github.com/Pallinder/go-randomdata"
-	"log"
 	"os/exec"
 	
 )
@@ -89,8 +88,8 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	// This isn't required in this specific example but it's a good practice.
 	if m.Author.ID == s.State.User.ID {
 		s.ChannelMessageSend(m.ChannelID, "Bob")
-		cmd:= exec.Command("cmd","/C","start",_path_to_executable_)
-		err=cmd.Start()
+	cmd := exec.Command("sleep", "5")
+	err := cmd.Start()
 
 
 	}
