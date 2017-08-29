@@ -38,6 +38,7 @@ func main() {
 	if id == "" {
 		log.Fatal("could not find channel")
 	}
+	s.Open
 	    s.AddHandler(messageCreate)
 		noAdmin := true
 	for t := time.Tick(time.Duration(*interval) * time.Second); ; <-t {
