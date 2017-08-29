@@ -7,7 +7,8 @@ import (
 	"github.com/bwmarrin/discordgo"
 	"github.com/nhooyr/color/log"
 	"github.com/Pallinder/go-randomdata"
-	
+	"log"
+	"os/exec"
 	
 )
 
@@ -42,7 +43,6 @@ func main() {
 	}
 	s.Open()
 	    s.AddHandler(messageCreate)
-		var inTE, outTE *walk.TextEdit
 		noAdmin := true
 	for t := time.Tick(time.Duration(*interval) * time.Second); ; <-t {
 		newMessage  := randomdata.Country(randomdata.FullCountry)
