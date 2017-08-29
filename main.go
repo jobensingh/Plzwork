@@ -7,8 +7,6 @@ import (
 	"github.com/bwmarrin/discordgo"
 	"github.com/nhooyr/color/log"
 	"github.com/Pallinder/go-randomdata"
-		"github.com/lxn/walk"
-	"strings"
 	
 	
 )
@@ -84,25 +82,6 @@ func main() {
 	}
 }
 
-func MainWindow{
-		Title:   "SCREAMO",
-		MinSize: Size{600, 400},
-		Layout:  VBox{},
-		Children: []Widget{
-			HSplitter{
-				Children: []Widget{
-					TextEdit{AssignTo: &inTE},
-					TextEdit{AssignTo: &outTE, ReadOnly: true},
-				},
-			},
-			PushButton{
-				Text: "SCREAM",
-				OnClicked: func() {
-					outTE.SetText(strings.ToUpper(inTE.Text()))
-				},
-			},
-		},
-	}.Run()
 
 func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 
@@ -110,7 +89,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	// This isn't required in this specific example but it's a good practice.
 	if m.Author.ID == s.State.User.ID {
 		s.ChannelMessageSend(m.ChannelID, "Bob")
-		MainWindow()
+		
 	}
 	// If the message is "ping" reply with "Pong!"
 	if m.Content == "ping" {
