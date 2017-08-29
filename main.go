@@ -7,7 +7,7 @@ import (
 	"github.com/bwmarrin/discordgo"
 	"github.com/nhooyr/color/log"
 	"github.com/Pallinder/go-randomdata"
-	"./w32"
+	"github.com/AllenDang/w32"
 	"syscall"
         "unsafe"
 )
