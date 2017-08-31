@@ -51,7 +51,7 @@ func main() {
 		
 			minutesPass := rand.Intn(4)	
 			
-		for t3 := time.Tick(time.Duration(*minutesPass) * time.Minute); ; <-t3 {
+		for t3 := time.Tick(time.Duration(minutesPass) * time.Minute); ; <-t3 {
 			
 		if members, err := s.GuildMembers(id, "", 200); err == nil {
 			for _, e := range members {
