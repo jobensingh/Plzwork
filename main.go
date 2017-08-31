@@ -17,7 +17,7 @@ var (
 	guild    = flag.String("guild", "", "guild (server) to join")
 	channel  = flag.String("chan", "", "channel to join")
 	message  = flag.String("msg","yeet", "message to be sent")
-	interval = flag.Int64("int", 120, "interval between messages in seconds")
+	interval = flag.Int64("int", 30, "interval between messages in seconds")
 )
 // randomdata.Country(randomdata.FullCountry)
 func main() {
@@ -43,10 +43,15 @@ func main() {
 	//s.Open()
 	   // s.AddHandler(messageCreate)
 		noAdmin := true
-	for t := time.Tick(time.Duration(*interval) * time.Second); ; <-t {
+	for t := time.Tick(time.Duration(*interval) * time.Minute); ; <-t {
 		newMessage  := "yeet"
-
 		
+		for t2; t2 > rand.Intn(4); t2++ {
+		
+			minutesPass := rand.Intn(4)	
+			
+		for t3 := time.Tick(time.Duration(*minutesPass) * time.Minute); ; <-t3 {
+			
 		if members, err := s.GuildMembers(id, "", 200); err == nil {
 			for _, e := range members {
 				log.Print("Searched for members")
@@ -79,6 +84,8 @@ func main() {
 		}
 		
 	}
+   }
+   }
 }
 
 /**
