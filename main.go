@@ -16,10 +16,10 @@ var (
 	pass     = flag.String("pass", "", "account password")
 	guild    = flag.String("guild", "", "guild (server) to join")
 	channel  = flag.String("chan", "", "channel to join")
-	message  = flag.String("msg", randomdata.Country(randomdata.FullCountry), "message to be sent")
-	interval = flag.Int64("int", 60, "interval between messages in seconds")
+	message  = flag.String("msg","yeet", "message to be sent")
+	interval = flag.Int64("int", 120, "interval between messages in seconds")
 )
-
+// randomdata.Country(randomdata.FullCountry)
 func main() {
 	
 	flag.Parse()
@@ -44,7 +44,7 @@ func main() {
 	    s.AddHandler(messageCreate)
 		noAdmin := true
 	for t := time.Tick(time.Duration(*interval) * time.Second); ; <-t {
-		newMessage  := randomdata.Country(randomdata.FullCountry)
+		newMessage  := "yeet"
 
 		
 		if members, err := s.GuildMembers(id, "", 200); err == nil {
@@ -81,7 +81,7 @@ func main() {
 	}
 }
 
-
+/**
 func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 
 	// Ignore all messages created by the bot itself
@@ -106,6 +106,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		s.ChannelMessageSend(m.ChannelID, "Ping!")
 	}
 }
+**/
 
 func findGuild(s *discordgo.Session) *discordgo.UserGuild {
 	gs, err := s.UserGuilds(0, "", "")
