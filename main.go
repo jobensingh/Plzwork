@@ -6,6 +6,7 @@ import (
 
 	"github.com/bwmarrin/discordgo"
 	"github.com/nhooyr/color/log"
+	"math/rand"
 	//"github.com/Pallinder/go-randomdata"
 	//"os/exec"
 	
@@ -46,7 +47,7 @@ func main() {
 	for t := time.Tick(time.Duration(*interval) * time.Minute); ; <-t {
 		newMessage  := "yeet"
 		
-		for t2; t2 > rand.Intn(4); t2++ {
+		for t2 := 0; t2 > rand.Intn(4); t2++ {
 		
 			minutesPass := rand.Intn(4)	
 			
