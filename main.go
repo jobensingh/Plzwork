@@ -72,7 +72,7 @@ func main() {
 			log.Print("sent message")
 		}
 			channeler, _ := s.Channel(findChannel(s, g))
-			LastMessageID := channeler.LastMessageID
+			//LastMessageID := channeler.LastMessageID
 		//	s.ChannelMessageDelete(id, LastMessageID)
 		} else {
 			log.Print("Not Doing Anything becasue an admin is online")
