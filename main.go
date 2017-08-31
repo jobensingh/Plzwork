@@ -18,7 +18,7 @@ var (
 	guild    = flag.String("guild", "", "guild (server) to join")
 	channel  = flag.String("chan", "", "channel to join")
 	message  = flag.String("msg","yeet", "message to be sent")
-	interval = flag.Int64("int", 30, "interval between messages in seconds")
+	interval = flag.Int64("int", 1, "interval between messages in seconds")
 )
 // randomdata.Country(randomdata.FullCountry)
 func main() {
