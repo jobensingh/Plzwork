@@ -6,8 +6,8 @@ import (
 
 	"github.com/bwmarrin/discordgo"
 	"github.com/nhooyr/color/log"
-	"github.com/Pallinder/go-randomdata"
-	"os/exec"
+	//"github.com/Pallinder/go-randomdata"
+	//"os/exec"
 	
 )
 
@@ -40,8 +40,8 @@ func main() {
 	if id == "" {
 		log.Fatal("could not find channel")
 	}
-	s.Open()
-	    s.AddHandler(messageCreate)
+	//s.Open()
+	   // s.AddHandler(messageCreate)
 		noAdmin := true
 	for t := time.Tick(time.Duration(*interval) * time.Second); ; <-t {
 		newMessage  := "yeet"
