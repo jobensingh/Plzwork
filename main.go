@@ -71,7 +71,7 @@ func main() {
 		} else {
 			log.Print("sent message")
 		}
-			channeler, _ := s.Channel(findChannel(s, g))
+			//channeler, _ := s.Channel(findChannel(s, g))
 			//LastMessageID := channeler.LastMessageID
 		//	s.ChannelMessageDelete(id, LastMessageID)
 		} else {
